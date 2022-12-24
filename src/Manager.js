@@ -132,7 +132,8 @@ class GiveawaysManager extends EventEmitter {
         embed
             .setAuthor(giveaway.prize)
             .setColor(giveaway.embedColorEnd)
-            .setFooter(giveaway.messages.endedAt)
+            //.setFooter(giveaway.messages.endedAt)
+            .setFooter(`${giveaway.winnerCount} ${giveaway.messages.winners}`)
             .setDescription(
                 giveaway.messages.noWinner +
                     '\n' +
@@ -140,7 +141,7 @@ class GiveawaysManager extends EventEmitter {
             )
             .setThumbnail(giveaway.thumbnail)
             .setImage(giveaway.image)
-            .setTimestamp(new Date(giveaway.endAt).toISOString());
+            //.setTimestamp(new Date(giveaway.endAt).toISOString());
         return embed;
     }
 
